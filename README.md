@@ -1,1 +1,1 @@
-# animated-waffle
+# mimarlik

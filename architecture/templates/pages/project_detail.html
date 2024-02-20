@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block site-title %}
+{{project.name}}
+{% endblock site-title %}
+
+{% block site-content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h1>{{project.name}}</h1>
+            <h3>Proje Türü</h3>
+            <h5>{{project.type}}</h5>
+            <h3>Tarih</h3>
+            <h5>{{project.date}}</h5>
+            <h3>Konum</h3>
+            <h5>{{project.location}}</h5>
+        </div>
+        <div class="col-6">
+            <p>{{project.descriptions|safe}}</p>
+        </div>
+    </div>
+    <div class="row my-5 justify-content-center">
+        <div class="col-md-12 text-center">
+            <img src="{{project.image.url}}" alt="{{project.name}}" width="100%" class="rounded"/>
+        </div>
+    </div>
+    <div class="row my-5 justify-content-center">
+        {% for photo in project.projects_image.all %}
+        <div class="col-md-6 text-center">
+            <img src="{{ photo.image.url }}" alt="{{ project.name }}" width="100%" class="rounded"/>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock site-content %}

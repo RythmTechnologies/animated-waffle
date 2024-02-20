@@ -1,0 +1,48 @@
+
+.img-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.img-wrapper > img{
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.img-wrapper > .content{
+    position: absolute;
+    inset: 0;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+    background: rgba(15, 15, 15, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* İçerik div'inin tıklanabilirliği engellemesini önle */
+}
+
+.img-wrapper > a {
+    position: relative;
+    display: block; /* Bağlantıyı blok seviyesinde bir element yap */
+}
+
+.img-wrapper > img,
+.img-wrapper .content{
+    transition: 200ms ease-in-out;
+}
+
+.img-wrapper > .content.fade {
+    opacity: 0;
+}
+.img-wrapper:hover > .content.fade {
+    opacity: 1;
+}
+
+.parallax-container {
+    width: 100%;
+    height: 500px; /* Görüntü yüksekliğine uygun bir değer ayarlayın */
+    overflow: hidden; /* Görüntünün taşması durumunda kesilmesini sağlar */
+}

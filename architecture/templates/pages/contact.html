@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block site-title %}
+  İletişim
+{% endblock site-title %}
+
+{% block site-content %}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="location d-flex">
+                <img src="{% static 'style/location-dot-solid.svg' %}" style="margin-right: 10px;" width="21px" height="29px"
+                alt="location_dot">
+                <span>
+                    <p class="my-2">
+                        {{company.address}}
+                    </p>
+                </span>
+            </div>
+            <div class="phone d-flex mt-2">
+                <img src="{% static 'style/phone-solid.svg' %}" style="margin-right: 10px;" width="21px" height="29px"
+                alt="phone_dot">
+                <span>
+                    <p class="my-2">
+                        {{company.phone}}
+                    </p>
+                </span>
+            </div>
+            <div class="message d-flex mt-2">
+                <img src="{% static 'style/message-solid.svg' %}" style="margin-right: 10px;" width="21px" height="29px"
+                alt="message_dot">
+                <span>
+                    <p class="my-2">
+                        {{company.email}}
+                    </p>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="names d-flex">
+                    <div class="Name" style="margin-right: 20px;">
+                        <p>İsim</p>
+                        <input type="text" size="23" name="input-name" />
+                    </div>
+                    <div class="surname">
+                        <p>Soyisim</p>
+                        <input type="text" size="23" name="input-surname"/>
+                    </div>
+                </div>
+                <div class="mail">
+                    <p>E-Posta</p>
+                    <input type="email" size="50" name="input-email">
+                </div>
+                <div class="message">
+                    <p>Mesaj</p>
+                    <textarea name="" id="" cols="50" rows="5" name="input-message"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock site-content %}
